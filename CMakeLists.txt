@@ -10,3 +10,7 @@ add_executable(capnpc-java compiler/src/main/cpp/capnpc-java.c++)
 target_compile_options(capnpc-java PUBLIC ${CAPNP_CFLAGS_OTHER})
 target_include_directories(capnpc-java PUBLIC ${CAPNP_INCLUDE_DIRS})
 target_link_libraries(capnpc-java ${CAPNP_LIBRARIES})
+
+install(TARGETS capnpc-java
+    RUNTIME DESTINATION bin
+    LIBRARY DESTINATION lib)
